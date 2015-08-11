@@ -1,0 +1,34 @@
+﻿{
+  "ErrorMessage": null,
+  "Pigs": [
+    {
+      "Back": "Back4440d833-6190-436f-b7d0-99fcba86e64c",
+      "Belly": "Belly2f6e6d86-1a87-41d9-8a9f-487d6190e138",
+      "Cannon": "Cannone237a656-c160-406f-86f2-61456974161d",
+      "Cheek": "Cheek82b216bb-7e00-4a7f-a5e6-805e9b9e2768",
+      "Coffin": "Coffin71c7df59-bbad-4266-922d-81d2e76eda69",
+      "Crops": "Crops64de9764-01cb-4dd6-ab99-04abdb33d4fd",
+      "Dewclaw": "Dewclawe4603d49-191a-4694-9f66-923a87d2d44f",
+      "Ear": "Ear27dd1a4e-d514-43d1-ae54-6bfacab8355e",
+      "FetLock": "FetLock3d154e74-f7aa-4057-8f09-92c02b080d72",
+      "ForeFlank": "ForeFlank55a5d724-1404-4df7-86da-669fbdcaec15",
+      "ForeLeg": "ForeLegcf7b4334-d2ab-43ed-bea2-8ddbc047baec",
+      "Ham": "Hama9a72295-667d-485c-b479-277a247e8a4d",
+      "Hock": "Hock9a23d848-68dc-4d7a-86b6-405af3207911",
+      "Jowls": "Jowls867bec2a-a1de-4317-b35f-60716bb9933a",
+      "Knee": "Kneebcbca96f-342b-405b-bada-ea9cec40a8ab",
+      "Loin": "Loine4c8e327-29dc-4c26-9dae-c9fa5955e729",
+      "Neck": "Neck0ba9d5a2-5087-431b-aded-c132ddd6b833",
+      "Nostrils": "Nostrils1469bb04-6820-45eb-91de-2b03047c17fd",
+      "Pastern": "Pastern2a3e1550-550d-4bd1-a4d7-f02a705ddb68",
+      "Poll": "Poll0e465037-90d7-4b5f-a7c5-d965d865fe5d",
+      "RearFlank": "RearFlank6bf88b73-0c00-4fbe-a970-f880f31e94ae",
+      "Rump": "Rump1434fbfb-af8e-408f-8df2-fe6fcda689a0",
+      "Sheath": "Sheathdc8247a5-bea7-4cd1-be40-d1cd5ff2bfe0",
+      "Shoulder": "Shoulder5cb9ca10-97ad-48f9-9b44-284f479d05a4",
+      "Snout": "Snoutdf0c21cb-2f4f-4ce8-a289-298a0f6072ee",
+      "Stiffle": "Stifflef05740b6-0bbe-4c76-bc02-234aa38d59bd",
+      "Tail": "Tail42e413cb-44dc-4f41-b4d8-1071ea4639b2"
+    }
+  ]
+}
