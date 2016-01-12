@@ -1,10 +1,9 @@
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebPages;
-using ApprovalTests.Web;
 using RazorGenerator.Mvc;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(RazorGeneratorMvcStart), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(ApprovalTests.Web.RazorGeneratorMvcStart), "Start")]
 
 namespace ApprovalTests.Web {
     public static class RazorGeneratorMvcStart {

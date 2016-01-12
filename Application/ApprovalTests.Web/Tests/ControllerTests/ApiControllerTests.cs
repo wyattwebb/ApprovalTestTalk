@@ -8,9 +8,11 @@ using ApprovalTests.Web.PersistenceModels;
 using ApprovalTests.Web.Services;
 using ApprovalTests.Web.Tests.Setup;
 using ApprovalUtilities.SimpleLogger;
+using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ploeh.AutoFixture;
+using Ploeh.AutoFixture.AutoMoq;
 
 namespace ApprovalTests.Web.Tests.ControllerTests
 {
@@ -24,6 +26,15 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         {
             _fixture = new Fixture();
             _fixture.Customize(new ApprovalTestCustomization());
+
+            //_fixture.Customize(new AutoMoqCustomization());
+
+            // NEEDED FOR API CONTROLLER ACTION CREATION
+            //_fixture.Customize(new HttpRequestMessageCustomization());
+            //_fixture.Customize(new ApiControllerCustomization());
+
+            // NEEDED FOR CONTROLLER ACTION CREATION
+            //_fixture.Customize(new MvcCustomization());
         }
 
         protected override string BaseUrl
@@ -322,20 +333,74 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         public void TestContructorWithMoq_Test()
         {
             // Arrange
+            var dataService = new Mock<IGetDataService>();
+            var mockMapper = new Mock<IMapperService>();
+            var mockValidation = new Mock<IValidateInput>();
 
+            var subject = new ApiController(
+                dataService.Object,
+                mockMapper.Object,
+                mockValidation.Object);
             // Act
+            subject.Get(1);
 
             // Assert
+            Assert.IsTrue(true);
+            // Just and stopping point for presentation purposes
         }
 
         [TestMethod]
         public void TestContructorWithMoq_And_AutoMoq_Test()
         {
             // Arrange
+            _fixture.Customize(new ApiControllerCustomization());      // This could also be done in initilization of this object
+            _fixture.Customize(new HttpRequestMessageCustomization()); // This could also be done in initilization of this object
+            _fixture.Customize(new AutoMoqCustomization());
+
+            var subject = _fixture.Create<ApiController>();
 
             // Act
+            subject.Get(1);
 
             // Assert
+            Assert.IsTrue(true);
+            // Just and stopping point for presentation purposes
+        }
+
+        [TestMethod]
+        public void Sample_TestContructorWithMoq_Test()
+        {
+            // Arrange
+            var dataService = new Mock<IGetDataService>();
+            var mockMapper = new Mock<IMapperService>();
+            var mockValidation = new Mock<IValidateInput>();
+
+            var subject = new SampleService(
+                dataService.Object,
+                mockMapper.Object,
+                mockValidation.Object);
+            // Act
+            var result = subject.IsSample(true);
+
+            // Assert
+            Assert.IsTrue(result);
+            // Just and stopping point for presentation purposes
+        }
+
+        [TestMethod]
+        public void Sample_TestContructorWithMoq_And_AutoMoq_Test()
+        {
+            // Arrange
+            //_fixture.Customize(new AutoMoqCustomization()); // This could also be done in initilization of this object
+
+            var subject = _fixture.Create<SampleService>();
+
+            // Act
+            var result = subject.IsSample(true);
+
+            // Assert
+            Assert.IsTrue(result);
+            // Just and stopping point for presentation purposes
         }
 
     }

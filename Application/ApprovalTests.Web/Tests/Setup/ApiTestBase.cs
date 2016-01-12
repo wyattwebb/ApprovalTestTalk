@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using ApprovalTests.Reporters;
+using ApprovalTests.Web.Tests.ControllerTests;
 using ApprovalTests.Web.Tests.Setup.ApiTesting.Infrastructure;
 using Newtonsoft.Json;
+using Ploeh.AutoFixture;
+using Ploeh.AutoFixture.AutoMoq;
 using RestSharp;
 
 namespace ApprovalTests.Web.Tests.Setup
