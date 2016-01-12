@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ApprovalTests.Combinations;
 using ApprovalTests.Reporters;
 using ApprovalTests.Web.Controllers;
 using ApprovalTests.Web.Models;
 using ApprovalTests.Web.PersistenceModels;
 using ApprovalTests.Web.Services;
 using ApprovalTests.Web.Tests.Setup;
+using ApprovalUtilities.SimpleLogger;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ploeh.AutoFixture;
@@ -276,11 +278,64 @@ namespace ApprovalTests.Web.Tests.ControllerTests
 
         [TestMethod]
         [UseReporter(typeof(DiffReporter))]
+        public void TestMultiple()
+        {
+            // Arrange
+            var subject = new ValidateInput();
+
+            var counts = new[] { null as int?, 0, 1, 3, 5, 12 };
+
+            // Act
+            // Assert
+            CombinationApprovals.VerifyAllCombinations(subject.ValidateGet, counts);
+        }
+
+        [TestMethod]
+        [UseReporter(typeof(DiffReporter))]
         public void GET_Get_API_JsonTest()
         {
             var result = ExecuteGetRequest<TeamsViewModel>("Data/1");
 
             VerifyApprovedJsonResult(result);
+        }
+
+        [TestMethod]
+        [UseReporter(typeof(DiffReporter))]
+        public void TestLogger()
+        {
+            // Arrange
+            var logger = Logger.LogToStringBuilder();
+            var subject = new ValidateInput();
+
+            // Act
+            subject.ValidateGet(0);
+            subject.ValidateGet(1);
+            subject.ValidateGet(3);
+            subject.ValidateGet(5);
+            subject.ValidateGet(12);
+
+            // Assert
+            Approvals.Verify(logger.ToString());
+        }
+
+        [TestMethod]
+        public void TestContructorWithMoq_Test()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
+        }
+
+        [TestMethod]
+        public void TestContructorWithMoq_And_AutoMoq_Test()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
         }
 
     }

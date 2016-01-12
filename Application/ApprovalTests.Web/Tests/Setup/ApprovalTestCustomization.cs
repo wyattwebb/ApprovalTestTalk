@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.Kernel;
 
@@ -10,24 +11,15 @@ namespace ApprovalTests.Web.Tests.Setup
         ICustomization
     {
         protected static readonly char DefaultChar = 'X';
-        protected static readonly string DefaultString = "...";
         protected static readonly DateTime DefaultDateTime = new DateTime(1111, 1, 1, 1, 1, 1, 111);
 
         public virtual void Customize(IFixture fixture)
         {
-            var specimenBuilders = CreateSpecimenBuilders();
+            fixture.Customizations.Add(new ConsistentSpecimenBuilder());
+            //fixture.Customizations.Add(new QuarterBackSpecimenBuilder());
 
-            foreach (var specimenBuilder in specimenBuilders)
-            {
-                fixture.Customizations.Add(specimenBuilder);
-            }
         }
-
-        protected virtual IEnumerable<ISpecimenBuilder> CreateSpecimenBuilders()
-        {
-            yield return new ConsistentSpecimenBuilder();
-        }
-
+        
         protected class ConsistentSpecimenBuilder :
             ISpecimenBuilder
         {
@@ -78,7 +70,7 @@ namespace ApprovalTests.Web.Tests.Setup
 
                 if (type == typeof(string))
                 {
-                    return DefaultString;
+                    return type.Name;
                 }
 
                 if (type.IsEnum)
@@ -107,5 +99,29 @@ namespace ApprovalTests.Web.Tests.Setup
                 return null;
             }
         }
+
+        //protected class QuarterBackSpecimenBuilder :
+        //ISpecimenBuilder
+        //{
+        //    public object Create(object request, ISpecimenContext context)
+        //    {
+        //        var prop = request as PropertyInfo;
+
+        //        if (prop == null)
+        //        {
+        //            return new NoSpecimen(request);
+        //        }
+
+        //        var isQuarterBackProperty = prop.Name.Contains("QuarterBack") &&
+        //                                    prop.PropertyType == typeof (string);
+
+        //        if (isQuarterBackProperty)
+        //        {
+        //            return "Aaron Rodgers";
+        //        }
+
+        //        return new NoSpecimen(request);
+        //    }
+        //}
     }
 }
