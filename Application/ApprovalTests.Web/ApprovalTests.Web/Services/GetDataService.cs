@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using ApprovalTests.Web.PersistenceModels;
-using Ploeh.AutoFixture;
 
 namespace ApprovalTests.Web.Services
 {

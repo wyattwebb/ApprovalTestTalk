@@ -8,7 +8,6 @@ using ApprovalTests.Web.PersistenceModels;
 using ApprovalTests.Web.Services;
 using ApprovalTests.Web.Tests.Setup;
 using ApprovalUtilities.SimpleLogger;
-using ApprovalUtilities.Utilities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Ploeh.AutoFixture;
