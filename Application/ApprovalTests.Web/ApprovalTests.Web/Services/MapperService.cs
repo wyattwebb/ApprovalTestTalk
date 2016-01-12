@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using ApprovalTests.Web.Models.BaconViewModels;
-using ApprovalTests.Web.PersistanceModels.BaconModels;
+using ApprovalTests.Web.Models;
+using ApprovalTests.Web.PersistenceModels;
 
 namespace ApprovalTests.Web.Services
 {
@@ -10,41 +10,27 @@ namespace ApprovalTests.Web.Services
     /// </summary>
     public class MapperService : IMapperService
     {
-        public PigsViewModel MapPigDomainToViewModel(Pig[] domainPigs)
+        public TeamsViewModel MapPigDomainToViewModel(Team[] teams
+            )
         {
-            return new PigsViewModel()
+            return new TeamsViewModel()
             {
-                Pigs =
-                    domainPigs.Select(parts =>
-                        new PigsViewModel.PigViewModel
+                Teams =
+                    teams.Select(members =>
+                        new TeamsViewModel.TeamViewModel()
                         {
-                            Back = parts.Back,
-                            Belly = parts.Belly,
-                            Cannon = parts.Cannon,
-                            Cheek = parts.Cheek,
-                            Coffin = parts.Coffin,
-                            Crops = parts.Crops,
-                            Dewclaw = parts.Dewclaw,
-                            Ear = parts.Ear,
-                            FetLock = parts.FetLock,
-                            ForeFlank = parts.ForeFlank,
-                            ForeLeg = parts.ForeLeg,
-                            Ham = parts.Ham,
-                            Hock = parts.Hock,
-                            Jowls = parts.Jowls,
-                            Knee = parts.Knee,
-                            Loin = parts.Loin,
-                            Neck = parts.Neck,
-                            Nostrils = parts.Nostrils,
-                            Pastern = parts.Pastern,
-                            Poll = parts.Poll,
-                            RearFlank = parts.RearFlank,
-                            Rump = parts.Rump,
-                            Sheath = parts.Sheath,
-                            Shoulder = parts.Shoulder,
-                            Snout = parts.Snout,
-                            Stiffle = parts.Stiffle,
-                            Tail = parts.Tail
+                            Center = members.Center,
+                            CornerBack = members.CornerBack,
+                            DefensiveEnd =  members.DefensiveEnd,
+                            DefensiveTackle = members.DefensiveTackle,
+                            LineBacker = members.LineBacker,
+                            OffensiveGuard = members.OffensiveGuard,
+                            OffensiveTackle = members.OffensiveTackle,
+                            QuarterBack = members.QuarterBack,
+                            RunningBack = members.RunningBack,
+                            Safety = members.Safety,
+                            TightEnd = members.TightEnd,
+                            WideReciever = members.WideReciever
                         }
                         ).ToArray()
             };

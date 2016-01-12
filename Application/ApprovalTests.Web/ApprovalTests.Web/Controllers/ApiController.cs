@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using ApprovalTests.Web.Models.BaconViewModels;
+using ApprovalTests.Web.Models;
 using ApprovalTests.Web.Services;
 
 namespace ApprovalTests.Web.Controllers
@@ -36,15 +36,15 @@ namespace ApprovalTests.Web.Controllers
         // GET: api/Data
         [Route("{id}")]
         [HttpGet]
-        public PigsViewModel Get(int? id)
+        public TeamsViewModel Get(int? id)
         {
-            var validationMessage = _validationInput.ValidateGetPigs(id);
+            var validationMessage = _validationInput.ValidateGet(id);
             if (validationMessage != null)
             {
-                return new PigsViewModel { ErrorMessage = validationMessage };
+                return new TeamsViewModel { ErrorMessage = validationMessage };
             }
 
-            var pigs = _dataService.GetGeneratedPigs(id.Value);
+            var pigs = _dataService.GetGeneratedTeams(id.Value);
 
             return _mapperService.MapPigDomainToViewModel(pigs);
         }

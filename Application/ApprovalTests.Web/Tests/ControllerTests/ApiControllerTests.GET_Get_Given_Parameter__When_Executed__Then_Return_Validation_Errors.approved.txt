@@ -1,10 +1,10 @@
 ﻿[
   {
     "ErrorMessage": "Count is Required",
-    "Pigs": null
+    "Teams": null
   },
   {
     "ErrorMessage": "FIVE is OUTRIGHT!",
-    "Pigs": null
+    "Teams": null
   }
 ]

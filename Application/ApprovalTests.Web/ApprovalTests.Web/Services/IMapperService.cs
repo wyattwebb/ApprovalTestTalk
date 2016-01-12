@@ -1,10 +1,10 @@
-﻿using ApprovalTests.Web.Models.BaconViewModels;
-using ApprovalTests.Web.PersistanceModels.BaconModels;
+﻿using ApprovalTests.Web.Models;
+using ApprovalTests.Web.PersistenceModels;
 
 namespace ApprovalTests.Web.Services
 {
     public interface IMapperService
     {
-        PigsViewModel MapPigDomainToViewModel(Pig[] domainPigs);
+        TeamsViewModel MapPigDomainToViewModel(Team[] teams);
     }
 }

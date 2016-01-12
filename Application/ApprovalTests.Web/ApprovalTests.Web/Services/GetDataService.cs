@@ -1,5 +1,6 @@
-﻿using System.Linq;
-using ApprovalTests.Web.PersistanceModels.BaconModels;
+﻿using System.Collections.Generic;
+using System.Linq;
+using ApprovalTests.Web.PersistenceModels;
 using Ploeh.AutoFixture;
 
 namespace ApprovalTests.Web.Services
@@ -9,17 +10,15 @@ namespace ApprovalTests.Web.Services
     /// </summary>
     public class GetDataService : IGetDataService
     {
-
-        public GetDataService()
+        public Team[] GetGeneratedTeams(int count)
         {
-        }
-
-        public Pig[] GetGeneratedPigs(int count)
-        {
-            return new[]
+            var teams = new List<Team>();
+            for (int i = 0; i < count; i++)
             {
-                new Pig {}
-            };
+                teams.Add(new Team());
+            }
+
+            return teams.ToArray();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace ApprovalTests.Web.Services
 {
     public class ValidateInput : IValidateInput
     {
-        public string ValidateGetPigs(int? count)
+        public string ValidateGet(int? count)
         {
             
             Logger.Event("validation started");

@@ -1,34 +1,19 @@
 ﻿{
   "ErrorMessage": null,
-  "Pigs": [
+  "Teams": [
     {
-      "Back": null,
-      "Belly": null,
-      "Cannon": null,
-      "Cheek": null,
-      "Coffin": null,
-      "Crops": null,
-      "Dewclaw": null,
-      "Ear": null,
-      "FetLock": null,
-      "ForeFlank": null,
-      "ForeLeg": null,
-      "Ham": null,
-      "Hock": null,
-      "Jowls": null,
-      "Knee": null,
-      "Loin": null,
-      "Neck": null,
-      "Nostrils": null,
-      "Pastern": null,
-      "Poll": null,
-      "RearFlank": null,
-      "Rump": null,
-      "Sheath": null,
-      "Shoulder": null,
-      "Snout": null,
-      "Stiffle": null,
-      "Tail": null
+      "Center": null,
+      "CornerBack": null,
+      "DefensiveEnd": null,
+      "DefensiveTackle": null,
+      "LineBacker": null,
+      "OffensiveGuard": null,
+      "OffensiveTackle": null,
+      "QuarterBack": null,
+      "RunningBack": null,
+      "Safety": null,
+      "TightEnd": null,
+      "WideReciever": null
     }
   ]
 }

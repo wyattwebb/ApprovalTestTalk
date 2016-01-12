@@ -1,9 +1,9 @@
-using ApprovalTests.Web.PersistanceModels.BaconModels;
+using ApprovalTests.Web.PersistenceModels;
 
 namespace ApprovalTests.Web.Services
 {
     public interface IGetDataService
     {
-        Pig[] GetGeneratedPigs(int count);
+        Team[] GetGeneratedTeams(int count);
     }
 }

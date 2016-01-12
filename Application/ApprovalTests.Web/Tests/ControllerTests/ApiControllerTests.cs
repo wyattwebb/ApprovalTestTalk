@@ -2,8 +2,8 @@
 using System.Linq;
 using ApprovalTests.Reporters;
 using ApprovalTests.Web.Controllers;
-using ApprovalTests.Web.Models.BaconViewModels;
-using ApprovalTests.Web.PersistanceModels.BaconModels;
+using ApprovalTests.Web.Models;
+using ApprovalTests.Web.PersistenceModels;
 using ApprovalTests.Web.Services;
 using ApprovalTests.Web.Tests.Setup;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -34,10 +34,10 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         {
             // Arrange
             var count = 10;
-            var items = _fixture.CreateMany<Pig>(10).ToArray();
+            var items = _fixture.CreateMany<Team>(10).ToArray();
 
             var dataService = new Mock<IGetDataService>();
-            dataService.Setup(x => x.GetGeneratedPigs(count))
+            dataService.Setup(x => x.GetGeneratedTeams(count))
                 .Returns(() => items);
 
             var subject = new ApiController(
@@ -47,23 +47,23 @@ namespace ApprovalTests.Web.Tests.ControllerTests
             var result = subject.Get(count);
 
             // Assert
-            Assert.AreEqual(items[0].Belly, result.Pigs[0].Belly);
-            Assert.AreEqual(items[0].Back, result.Pigs[0].Back);
-            Assert.AreEqual(items[0].Cannon, result.Pigs[0].Cannon);
-            Assert.AreEqual(items[0].Cheek, result.Pigs[0].Cheek);
-            Assert.AreEqual(items[0].Coffin, result.Pigs[0].Coffin);
-            Assert.AreEqual(items[0].Crops, result.Pigs[0].Crops);
-            Assert.AreEqual(items[0].Dewclaw, result.Pigs[0].Dewclaw);
-            Assert.AreEqual(items[0].Ear, result.Pigs[0].Ear);
+            Assert.AreEqual(items[0].RunningBack, result.Teams[0].RunningBack);
+            Assert.AreEqual(items[0].DefensiveTackle, result.Teams[0].DefensiveTackle);
+            Assert.AreEqual(items[0].LineBacker, result.Teams[0].LineBacker);
+            Assert.AreEqual(items[0].OffensiveGuard, result.Teams[0].OffensiveGuard);
+            Assert.AreEqual(items[0].OffensiveTackle, result.Teams[0].OffensiveTackle);
+            Assert.AreEqual(items[0].QuarterBack, result.Teams[0].QuarterBack);
+            Assert.AreEqual(items[0].Safety, result.Teams[0].Safety);
+            Assert.AreEqual(items[0].Center, result.Teams[0].Center);
             // ... Assert the rest
-            Assert.AreEqual(items[1].Belly, result.Pigs[0].Belly);
-            Assert.AreEqual(items[1].Back, result.Pigs[0].Back);
-            Assert.AreEqual(items[1].Cannon, result.Pigs[0].Cannon);
-            Assert.AreEqual(items[1].Cheek, result.Pigs[0].Cheek);
-            Assert.AreEqual(items[1].Coffin, result.Pigs[0].Coffin);
-            Assert.AreEqual(items[1].Crops, result.Pigs[0].Crops);
-            Assert.AreEqual(items[1].Dewclaw, result.Pigs[0].Dewclaw);
-            Assert.AreEqual(items[1].Ear, result.Pigs[0].Ear);
+            Assert.AreEqual(items[1].RunningBack, result.Teams[0].RunningBack);
+            Assert.AreEqual(items[1].DefensiveTackle, result.Teams[0].DefensiveTackle);
+            Assert.AreEqual(items[1].LineBacker, result.Teams[0].LineBacker);
+            Assert.AreEqual(items[1].OffensiveGuard, result.Teams[0].OffensiveGuard);
+            Assert.AreEqual(items[1].OffensiveTackle, result.Teams[0].OffensiveTackle);
+            Assert.AreEqual(items[1].QuarterBack, result.Teams[0].QuarterBack);
+            Assert.AreEqual(items[1].Safety, result.Teams[0].Safety);
+            Assert.AreEqual(items[1].Center, result.Teams[0].Center);
             // ... Assert the rest up till 10
 
         }
@@ -73,10 +73,10 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         {
             // Arrange
             var count = 10;
-            var items = _fixture.CreateMany<Pig>(10).ToArray();
+            var items = _fixture.CreateMany<Team>(10).ToArray();
 
             var dataService = new Mock<IGetDataService>();
-            dataService.Setup(x => x.GetGeneratedPigs(count))
+            dataService.Setup(x => x.GetGeneratedTeams(count))
                 .Returns(() => items);
 
             var subject = new ApiController(
@@ -96,52 +96,52 @@ namespace ApprovalTests.Web.Tests.ControllerTests
             var count = 3;
             var items = new[]
             {
-                new Pig
+                new Team
                 {
-                    Back = "Back",
-                    Belly = "Belly",
-                    Cannon = "Cannon",
-                    Cheek = "Cheek",
-                    Coffin = "Coffin",
-                    Crops = "Crops",
-                    Dewclaw = "Dewclaw",
-                    Ear = "Ear",
-                    FetLock = "FetLock",
-                    ForeFlank = "ForFlank"
+                    RunningBack = "RunningBack",
+                    OffensiveGuard = "OffensiveGuard",
+                    QuarterBack = "QuarterBack",
+                    OffensiveTackle = "OffensiveTackle",
+                    Safety = "Safety",
+                    TightEnd = "TightEnd",
+                    WideReciever = "WideReciever",
+                    DefensiveTackle = "DefensiveTackle",
+                    LineBacker = "LineBacker",
+                    Center = "Center"
                     // TODO the rest..
                 },
-                new Pig
+                new Team
                 {
-                    Back = "Back",
-                    Belly = "Belly",
-                    Cannon = "Cannon",
-                    Cheek = "Cheek",
-                    Coffin = "Coffin",
-                    Crops = "Crops",
-                    Dewclaw = "Dewclaw",
-                    Ear = "Ear",
-                    FetLock = "FetLock",
-                    ForeFlank = "ForFlank"
+                    RunningBack = "RunningBack",
+                    OffensiveGuard = "OffensiveGuard",
+                    QuarterBack = "QuarterBack",
+                    OffensiveTackle = "OffensiveTackle",
+                    Safety = "Safety",
+                    TightEnd = "TightEnd",
+                    WideReciever = "WideReciever",
+                    DefensiveTackle = "DefensiveTackle",
+                    LineBacker = "LineBacker",
+                    Center = "Center"
                     // TODO the rest..
                 },
-                new Pig
+                new Team
                 {
-                    Back = "Back",
-                    Belly = "Belly",
-                    Cannon = "Cannon",
-                    Cheek = "Cheek",
-                    Coffin = "Coffin",
-                    Crops = "Crops",
-                    Dewclaw = "Dewclaw",
-                    Ear = "Ear",
-                    FetLock = "FetLock",
-                    ForeFlank = "ForFlank"
+                    RunningBack = "RunningBack",
+                    OffensiveGuard = "OffensiveGuard",
+                    QuarterBack = "QuarterBack",
+                    OffensiveTackle = "OffensiveTackle",
+                    Safety = "Safety",
+                    TightEnd = "TightEnd",
+                    WideReciever = "WideReciever",
+                    DefensiveTackle = "DefensiveTackle",
+                    LineBacker = "LineBacker",
+                    Center = "Center"
                     // TODO the rest..
                 }
             };
 
             var dataService = new Mock<IGetDataService>();
-            dataService.Setup(x => x.GetGeneratedPigs(count))
+            dataService.Setup(x => x.GetGeneratedTeams(count))
                 .Returns(() => items);
 
             var subject = new ApiController(
@@ -159,10 +159,10 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         {
             // Arrange
             var count = 10;
-            var items = _fixture.CreateMany<Pig>(10).ToArray();
+            var items = _fixture.CreateMany<Team>(10).ToArray();
 
             var dataService = new Mock<IGetDataService>();
-            dataService.Setup(x => x.GetGeneratedPigs(count))
+            dataService.Setup(x => x.GetGeneratedTeams(count))
                 .Returns(() => items);
 
             var subject = new ApiController(
@@ -183,7 +183,7 @@ namespace ApprovalTests.Web.Tests.ControllerTests
 
             var expected = "Count is Required";
             var mockValidation = new Mock<IValidateInput>();
-            mockValidation.Setup(x => x.ValidateGetPigs(count))
+            mockValidation.Setup(x => x.ValidateGet(count))
                 .Returns(expected);
 
             var subject = new ApiController(
@@ -204,7 +204,7 @@ namespace ApprovalTests.Web.Tests.ControllerTests
 
             var expected = "FIVE is OUTRIGHT!";
             var mockValidation = new Mock<IValidateInput>();
-            mockValidation.Setup(x => x.ValidateGetPigs(count))
+            mockValidation.Setup(x => x.ValidateGet(count))
                 .Returns(expected);
 
             var subject = new ApiController(
@@ -226,16 +226,16 @@ namespace ApprovalTests.Web.Tests.ControllerTests
 
             var nullExpected = "Count is Required";
             var mockValidation = new Mock<IValidateInput>();
-            mockValidation.Setup(x => x.ValidateGetPigs(nullCount))
+            mockValidation.Setup(x => x.ValidateGet(nullCount))
                 .Returns(nullExpected);
 
             var fiveExpected = "FIVE is OUTRIGHT!";
-            mockValidation.Setup(x => x.ValidateGetPigs(fiveCount))
+            mockValidation.Setup(x => x.ValidateGet(fiveCount))
                 .Returns(fiveExpected);
 
             var subject = new ApiController(
                 validateInput: mockValidation.Object);
-            var results = new List<PigsViewModel>();
+            var results = new List<TeamsViewModel>();
 
             // Act
             results.Add(subject.Get(nullCount));
@@ -254,16 +254,16 @@ namespace ApprovalTests.Web.Tests.ControllerTests
 
             var nullExpected = "Count is Required";
             var mockValidation = new Mock<IValidateInput>();
-            mockValidation.Setup(x => x.ValidateGetPigs(nullCount))
+            mockValidation.Setup(x => x.ValidateGet(nullCount))
                 .Returns(nullExpected);
 
             var fiveExpected = "FIVE is OUTRIGHT!";
-            mockValidation.Setup(x => x.ValidateGetPigs(fiveCount))
+            mockValidation.Setup(x => x.ValidateGet(fiveCount))
                 .Returns(fiveExpected);
 
             var subject = new ApiController(
                 validateInput: mockValidation.Object);
-            var results = new List<PigsViewModel>();
+            var results = new List<TeamsViewModel>();
 
             // Act
             var htmlReport = new BuildHtml("Multiple Approval Test Count Input");
@@ -278,7 +278,7 @@ namespace ApprovalTests.Web.Tests.ControllerTests
         [UseReporter(typeof(DiffReporter))]
         public void GET_Get_API_JsonTest()
         {
-            var result = ExecuteGetRequest<PigsViewModel>("Data/1");
+            var result = ExecuteGetRequest<TeamsViewModel>("Data/1");
 
             VerifyApprovedJsonResult(result);
         }

@@ -8,6 +8,6 @@ namespace ApprovalTests.Web.Services
 {
     public interface IValidateInput
     {
-        string ValidateGetPigs(int? count);
+        string ValidateGet(int? count);
     }
 }

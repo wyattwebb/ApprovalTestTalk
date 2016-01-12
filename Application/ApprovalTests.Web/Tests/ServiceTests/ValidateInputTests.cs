@@ -25,11 +25,11 @@ namespace ApprovalTests.Web.Tests.ServiceTests
             var subject = new ValidateInput();
 
             // Act
-            subject.ValidateGetPigs(0);
-            subject.ValidateGetPigs(1);
-            subject.ValidateGetPigs(3);
-            subject.ValidateGetPigs(5);
-            subject.ValidateGetPigs(12);
+            subject.ValidateGet(0);
+            subject.ValidateGet(1);
+            subject.ValidateGet(3);
+            subject.ValidateGet(5);
+            subject.ValidateGet(12);
 
             // Assert
             Approvals.Verify(logger.ToString());
@@ -46,7 +46,7 @@ namespace ApprovalTests.Web.Tests.ServiceTests
 
             // Act
             // Assert
-            CombinationApprovals.VerifyAllCombinations(subject.ValidateGetPigs, counts);
+            CombinationApprovals.VerifyAllCombinations(subject.ValidateGet, counts);
         }
 
         protected override string BaseUrl
