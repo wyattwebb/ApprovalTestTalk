@@ -134,7 +134,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ControllerTests\ButcherShopControllerTests.cs" />
+    <Compile Include="ControllerTests\ApiControllerTests.cs" />
     <Compile Include="ControllerTests\HomeControllerTests.cs" />
     <Compile Include="ServiceTests\ValidateInputTests.cs" />
     <Compile Include="Setup\ApprovalTestCustomization.cs" />
@@ -154,13 +154,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_GetPigs_API_JsonTest.approved.txt" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_GetPigs_Given_Parameter__When_Executed__Then_Return_Validation_Errors.approved.txt" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_GetPigs_Given_Parameter__When_Executed__Then_Return_Validation_Errors_Html.approved.html" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_GetPigs_Ten.approved.txt" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_GetPigs_Ten_UsingAutoFixture.approved.txt" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.GET_Given_Manual_Setups__When_GetPigs_Three__ThenAsserts.approved.txt" />
-    <Content Include="ControllerTests\ButcherShopControllerTests.MyTestMethod.approved.txt" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Get_API_JsonTest.approved.txt" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Get_Given_Parameter__When_Executed__Then_Return_Validation_Errors.approved.txt" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Get_Given_Parameter__When_Executed__Then_Return_Validation_Errors_Html.approved.html" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Get_Ten.approved.txt" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Get_Ten_UsingAutoFixture.approved.txt" />
+    <Content Include="ControllerTests\ApiControllerTests.GET_Given_Manual_Setups__When_Get_Three__ThenAsserts.approved.txt" />
     <Content Include="ControllerTests\HomeControllerTests.Index.approved.html" />
     <Content Include="ServiceTests\ValidateInputTests.TestLogger.approved.txt" />
     <Content Include="ServiceTests\ValidateInputTests.TestMultiple.approved.txt" />

@@ -24,6 +24,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -181,7 +182,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\ButcherShopController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,9 +190,9 @@
     <Compile Include="Models\BaconViewModels\PigViewModel.cs" />
     <Compile Include="PersistanceModels\BaconModels\Pig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\BaconService.cs" />
+    <Compile Include="Services\GetDataService.cs" />
     <Compile Include="Services\IMapperService.cs" />
-    <Compile Include="Services\IBaconService.cs" />
+    <Compile Include="Services\IGetDataService.cs" />
     <Compile Include="Services\IValidateInput.cs" />
     <Compile Include="Services\MapperService.cs" />
     <Compile Include="Services\ValidateInput.cs" />

@@ -45,12 +45,6 @@ namespace ApprovalTests.Web.Tests.ServiceTests
             var counts = new[] {null as int?, 0, 1, 3, 5, 12};
 
             // Act
-            //subject.ValidateGetPigs(0);
-            //subject.ValidateGetPigs(1);
-            //subject.ValidateGetPigs(3);
-            //subject.ValidateGetPigs(5);
-            //subject.ValidateGetPigs(12);
-
             // Assert
             CombinationApprovals.VerifyAllCombinations(subject.ValidateGetPigs, counts);
         }
